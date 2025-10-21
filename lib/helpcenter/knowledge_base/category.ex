@@ -13,6 +13,19 @@ defmodule Helpcenter.KnowledgeBase.Category do
   actions do
     default_accept [:name, :slug, :description]
     defaults [:create, :read, :update, :destroy]
+
+    update :create_article do
+      description "Create an article under a specified category."
+      require_atomic? false
+      argument :article_attrs, :map, allow_nil?: false
+      change manage_relationship(:article_attrs, :articles, type: :create)
+    end
+
+    create :create_with_article do
+      description "Create a Category and an article under it"
+      argument :article_attrs, :map, allow_nil?: false
+      change manage_relationship(:article_attrs, :articles, type: :create)
+    end
   end
 
   attributes do
