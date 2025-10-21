@@ -1,5 +1,3 @@
-Compiling 4 files (.ex)
-Generated helpcenter app
 import Config
 
 config :helpcenter,
