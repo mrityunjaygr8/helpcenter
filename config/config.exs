@@ -1,6 +1,11 @@
+Compiling 4 files (.ex)
+Generated helpcenter app
 import Config
 
-config :helpcenter, ecto_repos: [Helpcenter.Repo]
+config :helpcenter,
+  ecto_repos: [Helpcenter.Repo],
+  ash_domains: [Helpcenter.KnowledgeBase],
+  generators: [timestamp_type: :utc_datetime]
 
 config :ash,
   allow_forbidden_field_for_relationships_by_default?: true,
