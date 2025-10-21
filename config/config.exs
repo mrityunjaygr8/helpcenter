@@ -1,5 +1,7 @@
 import Config
 
+config :helpcenter, ecto_repos: [Helpcenter.Repo]
+
 config :ash,
   allow_forbidden_field_for_relationships_by_default?: true,
   include_embedded_source_by_default?: false,
@@ -17,6 +19,7 @@ config :spark,
     remove_parens?: true,
     "Ash.Resource": [
       section_order: [
+        :postgres,
         :resource,
         :code_interface,
         :actions,
